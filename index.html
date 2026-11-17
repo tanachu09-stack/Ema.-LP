@@ -3,227 +3,685 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ema. – Photography by Yuta</title>
-<meta name="description" content="日常の生きる美しい瞬間や表情をおさめています。愛知県豊橋市を拠点に活動する写真家・田中悠太のポートフォリオ。">
-<meta name="robots" content="noai, noimageai">
+<title>Ema. – Photography by Yuta | Portrait & Video</title>
+<meta name="description" content="愛知県豊橋市を拠点に活動する写真家・田中悠太のポートフォリオ兼ランディングページ。日常の生きる美しい瞬間や表情をおさめます。">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="Ema. – Photography by Yuta">
-<meta property="og:description" content="日常の生きる美しい瞬間や表情をおさめています。">
+<meta property="og:title" content="Ema. – Photography by Yuta | Portrait & Video">
+<meta property="og:description" content="日常の生きる美しい瞬間を、ありのままに。愛知県豊橋市拠点に出張撮影・ポートフォリオ制作。">
 <meta property="og:image" content="images/hero/01.jpg">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;600&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bar:72px;--cur:#b9c6cb}
-*{box-sizing:border-box;margin:0}
-html,body{height:100%}
-body{background:#fff;color:#000;font:14px/1.9 "EB Garamond","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:1px solid #000;outline-offset:3px}
-.view{position:fixed;inset:0 0 var(--bar) 0;overflow-y:auto}
-.view[hidden]{display:none}
-/* slideshow */
-.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none}
-.stage img{max-width:100%;max-height:100%;display:block;-webkit-user-drag:none;animation:f .5s ease}
-.ph{height:100%;aspect-ratio:2/3;max-width:100%;background:#efefef;display:flex;align-items:flex-end;justify-content:center;padding:16px;color:#999;font-size:12px}
-@keyframes f{from{opacity:0}to{opacity:1}}
-.arr{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;padding:16px;cursor:pointer;opacity:.85;transition:opacity .2s ease}
-.arr:hover{opacity:1}
-.arr svg{display:block;width:16px;height:56px;stroke:#000;stroke-width:1;fill:none}
-.arr.p{left:32px}.arr.n{right:32px}
-/* text pages */
-.wrap{width:min(1330px,calc(100% - 48px));margin:47px auto 80px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,643px);gap:47px}
-.wrap.one{grid-template-columns:minmax(0,640px)}
-h2{font-size:30px;font-weight:600;line-height:1.4;margin-bottom:14px}
-h2:not(:first-child){margin-top:64px}
-.wrap p{margin-bottom:18px}
-.wrap a.u{border-bottom:1px solid #000}
-.pic{aspect-ratio:1/1;background:#efefef}
-.pic img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none}
-/* bottom bar */
-#bar{position:fixed;inset:auto 0 0 0;height:var(--bar);background:#fff;display:flex;align-items:center;gap:34px;padding:0 24px;font-size:15px;z-index:10;border-top:1px solid rgba(0,0,0,.06)}
-.name{font-size:22px;margin-right:6px;white-space:nowrap}
-#nav{display:flex;align-items:center;gap:34px;white-space:nowrap}
-#nav a,#nav button,.r button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;transition:color .2s ease}
-#nav a.on,#nav button.on{color:var(--cur)}
-.dd{position:relative}
-.sub{position:absolute;bottom:100%;left:-16px;padding:12px 16px 20px;background:#fff;display:none;flex-direction:column;gap:6px;box-shadow:0 -4px 16px rgba(0,0,0,.04)}
-.dd:hover .sub,.dd:focus-within .sub,.dd.open .sub{display:flex}
-.r{margin-left:auto;display:flex;align-items:center;gap:20px;white-space:nowrap}
-.r svg{width:16px;height:16px;display:block;stroke:#000;fill:none;stroke-width:1.8}
-.mb{display:none}
-.lp-link{opacity:.6;font-size:13px;border-bottom:1px dotted #888;padding-bottom:1px;transition:opacity .2s}
-.lp-link:hover{opacity:1}
-@media (max-width:1180px){.cp{display:none}}
-@media (max-width:860px){
- :root{--bar:56px}
- #bar{padding:0 16px}
- .mb{display:block;margin-left:auto;font:inherit;font-size:15px;background:none;border:0;cursor:pointer}
- #nav,.r{display:none}
- #bar.open #nav{display:flex;position:fixed;left:0;right:0;bottom:var(--bar);background:#fff;flex-direction:column;align-items:flex-start;gap:12px;padding:20px 16px 8px;border-top:1px solid rgba(0,0,0,.06)}
- #bar.open .r{display:flex;position:fixed;left:0;right:0;bottom:var(--bar);margin:0;background:#fff;padding:0 16px 14px;transform:translateY(-100%);flex-wrap:wrap}
- #bar.open .cp{display:block;flex-basis:100%;font-size:12px}
- .sub{position:static;display:flex;padding:6px 0 0 14px;box-shadow:none}
- .arr.p{left:2px}.arr.n{right:2px}.arr svg{height:40px}
- .wrap{grid-template-columns:1fr;gap:28px;margin-top:28px}
- .pic{order:-1}
- h2{font-size:26px}
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --line: #e5e5e5;
+  --accent: #b9c6cb;
+  --serif-en: "EB Garamond", serif;
+  --serif-ja: "Shippori Mincho", "Noto Serif JP", serif;
 }
-@media (prefers-reduced-motion:reduce){.stage img{animation:none}}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif-ja);
+  font-size: 15px;
+  line-height: 2.1;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--serif-en);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a {
+  transition: color .2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.cta-btn {
+  background: #000;
+  color: #fff !important;
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  transition: opacity .2s ease;
+}
+
+.cta-btn:hover {
+  opacity: 0.85;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.75) 60%, #fff 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.hero-sub {
+  font-family: var(--serif-en);
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.hero-title {
+  font-size: clamp(32px, 5.5vw, 54px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 40px;
+  line-height: 2.2;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #000;
+  color: #fff;
+  padding: 16px 38px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  transition: all .25s ease;
+}
+
+.btn-primary:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid #000;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  background: rgba(255,255,255,0.85);
+  transition: all .25s ease;
+}
+
+.btn-secondary:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Common Section */
+section {
+  padding: 110px 24px;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.sec-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sec-tag {
+  font-family: var(--serif-en);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.sec-title {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+/* Statement */
+.statement {
+  background: #fafafa;
+}
+
+.statement-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 17px;
+  line-height: 2.4;
+}
+
+.statement-inner p + p {
+  margin-top: 32px;
+}
+
+.statement-highlight {
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  margin: 40px 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gal-card {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.gal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gal-card:hover img {
+  transform: scale(1.04);
+}
+
+.gal-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px 20px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  color: #fff;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.gal-card:hover .gal-caption { opacity: 1; }
+.gal-caption span { display: block; font-size: 11px; opacity: 0.8; letter-spacing: 0.1em; }
+
+/* Menu */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.menu-card {
+  border: 1px solid var(--line);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .3s, transform .3s;
+  background: #fff;
+}
+
+.menu-card:hover {
+  border-color: #000;
+  transform: translateY(-4px);
+}
+
+.menu-card.featured {
+  border: 1.5px solid #000;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  padding: 4px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.menu-name { font-family: var(--serif-en); font-size: 24px; letter-spacing: 0.08em; margin-bottom: 8px; }
+.menu-price { font-family: var(--serif-en); font-size: 32px; margin-bottom: 16px; color: #000; }
+.menu-price span { font-size: 14px; color: var(--muted); margin-left: 4px; }
+.menu-spec { font-size: 14px; color: var(--muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.menu-desc { font-size: 14px; line-height: 2; margin-bottom: 32px; flex-grow: 1; }
+.menu-card .btn-primary { width: 100%; text-align: center; padding: 14px 20px; font-size: 13px; }
+.menu-card .btn-secondary { width: 100%; text-align: center; padding: 14px 20px; font-size: 13px; }
+
+/* About */
+.about-box {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.about-pic {
+  aspect-ratio: 1/1;
+  background: #eee;
+  overflow: hidden;
+}
+
+.about-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-info h3 { font-size: 24px; margin-bottom: 6px; font-weight: 500; }
+.about-info .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; font-family: var(--serif-en); letter-spacing: 0.1em; }
+.about-info p { margin-bottom: 16px; font-size: 15px; }
+
+/* Contact CTA */
+.cta-sec {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.cta-sec .sec-tag { color: rgba(255,255,255,0.6); }
+.cta-sec .sec-title { color: #fff; margin-bottom: 24px; }
+.cta-sec p { max-width: 600px; margin: 0 auto 40px; color: rgba(255,255,255,0.85); font-size: 16px; }
+
+.btn-insta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: #000;
+  padding: 18px 42px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: opacity .2s;
+}
+
+.btn-insta:hover { opacity: 0.9; }
+.btn-insta svg { width: 20px; height: 20px; stroke: #000; fill: none; stroke-width: 1.8; }
+
+/* Footer */
+footer {
+  padding: 48px 32px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+/* Lightbox Modal */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+#modal.active { display: flex; }
+#modal img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+
+@media (max-width: 860px) {
+  header { padding: 14px 20px; }
+  .nav-links a:not(.cta-btn) { display: none; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .about-box { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+  .about-pic { max-width: 240px; margin: 0 auto; }
+  section { padding: 72px 20px; }
+}
 </style>
 </head>
 <body>
-<div class="view" id="v-gal">
-  <div class="stage" id="stage"></div>
-  <button class="arr p" aria-label="前へ"><svg viewBox="0 0 16 56"><path d="M14 1 2 28l12 27"/></svg></button>
-  <button class="arr n" aria-label="次へ"><svg viewBox="0 0 16 56"><path d="M2 1l12 27L2 55"/></svg></button>
-</div>
 
-<div class="view" id="v-about" hidden>
-  <div class="wrap">
-    <div>
-      <h2>写真家</h2>
-      <p>田中悠太</p>
-      <p>愛知県豊橋市を拠点に活動。</p>
-      <p>日常の生きる美しい瞬間や表情をおさめています。</p>
-      <p>自分をしっかり観てあげる。そんな時間がとても大切です。整えるだけ。ありのままを撮影します。撮影を終えた時、あなたの在り方が目に見えるカタチになります。</p>
-      <p>アーティスト、経営者、節目を迎える人へ。まず話して、その人の中にあるものを掘って、ポーズも演出もなしで撮ります。</p>
-      <h2>Photographer</h2>
-      <p>Yuta Tanaka</p>
-      <p>Based in Toyohashi, Aichi, Japan.</p>
-      <p>【Photograph Style】</p>
-      <p>Portrait, Video</p>
-      <h2>Menu</h2>
-      <p>TRACE　撮影2時間／写真データ最大20枚　¥35,000</p>
-      <p>DOUKOU　撮影1日／写真最大50枚＋プロフィール動画　¥120,000</p>
-      <p>PERSONAL FLAG　年4日の撮影／写真最大50枚＋プロフィール動画　¥360,000</p>
-      <p>すべて税込、オンライン納品。交通費は別途、場所はご相談ください。</p>
-    </div>
-    <div class="pic"><img src="images/profile.jpg" alt="田中悠太 Yuta Tanaka" onerror="this.remove()" draggable="false"></div>
-  </div>
-</div>
-
-<div class="view" id="v-contact" hidden>
-  <div class="wrap one">
-    <div>
-      <h2>Contact</h2>
-      <p>気になることがあれば、InstagramのDMでお気軽にどうぞ。</p>
-      <p><a class="u" href="https://www.instagram.com/tayu__t" target="_blank" rel="noopener">Instagram @tayu__t</a></p>
-    </div>
-  </div>
-</div>
-
-<footer id="bar">
-  <a class="name" href="#home">Ema.</a>
-  <button class="mb" aria-expanded="false">Menu</button>
-  <nav id="nav" aria-label="メインメニュー">
-    <a href="#portrait" data-k="portrait">Portrait</a>
-    <a href="#works" data-k="works">Works</a>
-    <a href="#about" data-k="about">Biography</a>
-    <a href="#contact" data-k="contact">Contact</a>
-    <a href="lp.html" class="lp-link" title="ランディングページ形式で閲覧">LP View</a>
+<!-- Header -->
+<header>
+  <a href="#hero" class="brand">Ema.</a>
+  <nav class="nav-links">
+    <a href="#concept">Concept</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="cta-btn">Contact</a>
   </nav>
-  <div class="r">
-    <a href="https://www.instagram.com/tayu__t" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="#000"/></svg></a>
-    <button id="share" type="button">Share</button>
-    <span class="cp">Copyright © 2026 Ema. / Yuta Tanaka All rights reserved.</span>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <img src="images/hero/01.jpg" alt="Ema. Photography">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-sub">Photography by Yuta Tanaka</div>
+    <h1 class="hero-title">日常の生きる美しい瞬間を、<br>ありのままに。</h1>
+    <p class="hero-desc">
+      自分をしっかり観てあげる。そんな時間がとても大切です。<br>
+      整えるだけ。ポーズも演出もなしで、あなたの在り方を写します。
+    </p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">撮影メニューを見る</a>
+      <a href="#gallery" class="btn-secondary">作品ギャラリー</a>
+    </div>
+  </div>
+</section>
+
+<!-- Concept / Statement -->
+<section id="concept" class="statement">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag">Concept</div>
+      <h2 class="sec-title">在り方が、目に見えるカタチになる</h2>
+    </div>
+    <div class="statement-inner">
+      <p>
+        自分をしっかり観てあげる。<br>
+        そんな時間がとても大切です。
+      </p>
+      <p>
+        整えるだけ。ありのままを撮影します。<br>
+        撮影を終えた時、あなたの在り方が目に見えるカタチになります。
+      </p>
+      <div class="statement-highlight">
+        まず話して、その人の中にあるものを掘って、<br>
+        ポーズも演出もなしで撮ります。
+      </div>
+      <p>
+        アーティスト、経営者、人生の節目を迎える人へ。<br>
+        静かに呼吸するように、日常と対話するポートレートをお届けします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Preview -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag">Works & Portfolio</div>
+      <h2 class="sec-title">Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-card" data-src="images/portrait/01.jpg">
+        <img src="images/portrait/01.jpg" alt="Portrait">
+        <div class="gal-caption"><span>PORTRAIT</span>ありのままの表情</div>
+      </div>
+      <div class="gal-card" data-src="images/portrait/02.jpg">
+        <img src="images/portrait/02.jpg" alt="Portrait">
+        <div class="gal-caption"><span>PORTRAIT</span>対話から生まれるもの</div>
+      </div>
+      <div class="gal-card" data-src="images/hero/02.jpg">
+        <img src="images/hero/02.jpg" alt="Moment">
+        <div class="gal-caption"><span>MOMENT</span>静けさと呼吸</div>
+      </div>
+      <div class="gal-card" data-src="images/works/011D3F7E-4372-445B-9237-7F0EA7FE9188_1_105_c.jpeg">
+        <img src="images/works/011D3F7E-4372-445B-9237-7F0EA7FE9188_1_105_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>日常と光</div>
+      </div>
+      <div class="gal-card" data-src="images/works/14321BD0-713E-4C37-A931-E86991234377_4_5005_c.jpeg">
+        <img src="images/works/14321BD0-713E-4C37-A931-E86991234377_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>静けさと呼吸</div>
+      </div>
+      <div class="gal-card" data-src="images/works/1F58EA65-1283-4681-908A-F72B31A1BE6C_4_5005_c.jpeg">
+        <img src="images/works/1F58EA65-1283-4681-908A-F72B31A1BE6C_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>瞬間の気配</div>
+      </div>
+      <div class="gal-card" data-src="images/works/32B879C9-B7DF-4B8A-ABA8-0F799E7CB435_4_5005_c.jpeg">
+        <img src="images/works/32B879C9-B7DF-4B8A-ABA8-0F799E7CB435_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>光と影</div>
+      </div>
+      <div class="gal-card" data-src="images/works/3808D591-B1A6-44E5-B3B6-52744D0E0CB4_4_5005_c.jpeg">
+        <img src="images/works/3808D591-B1A6-44E5-B3B6-52744D0E0CB4_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>あるがまま</div>
+      </div>
+      <div class="gal-card" data-src="images/works/3C370DB9-2FD1-4487-9933-D73F3BC1EB3A_4_5005_c.jpeg">
+        <img src="images/works/3C370DB9-2FD1-4487-9933-D73F3BC1EB3A_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>佇まい</div>
+      </div>
+      <div class="gal-card" data-src="images/works/4BBBE8B8-D046-4534-90F8-267A1657AEAD_4_5005_c.jpeg">
+        <img src="images/works/4BBBE8B8-D046-4534-90F8-267A1657AEAD_4_5005_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>表情</div>
+      </div>
+      <div class="gal-card" data-src="images/works/7A8531BD-D08E-429B-A6C0-2CF2A4DDA5FC_1_105_c.jpeg">
+        <img src="images/works/7A8531BD-D08E-429B-A6C0-2CF2A4DDA5FC_1_105_c.jpeg" alt="Works">
+        <div class="gal-caption"><span>WORKS</span>まなざし</div>
+      </div>
+      <div class="gal-card" data-src="images/portrait/03.jpg">
+        <img src="images/portrait/03.jpg" alt="Portrait">
+        <div class="gal-caption"><span>PORTRAIT</span>深まる時間</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu / Pricing -->
+<section id="menu" style="background:#fafafa;">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag">Pricing & Plan</div>
+      <h2 class="sec-title">Menu</h2>
+    </div>
+    <div class="menu-grid">
+      <!-- TRACE -->
+      <div class="menu-card">
+        <div class="menu-name">TRACE</div>
+        <div class="menu-price">¥35,000<span>(税込)</span></div>
+        <div class="menu-spec">撮影2時間 ／ 写真データ最大20枚</div>
+        <div class="menu-desc">
+          まずは自分を写してみたい方に。丁寧に対話しながら、素の表情や佇まいを引き出すスタンダードなポートレートプランです。
+        </div>
+        <a href="#contact" class="btn-secondary">相談・予約する</a>
+      </div>
+
+      <!-- DOUKOU -->
+      <div class="menu-card featured">
+        <div class="badge">Recommend</div>
+        <div class="menu-name">DOUKOU</div>
+        <div class="menu-price">¥120,000<span>(税込)</span></div>
+        <div class="menu-spec">撮影1日 ／ 写真最大50枚 ＋ プロフィール動画</div>
+        <div class="menu-desc">
+          丸一日あなたに同行し、活動や日々の営み、表情の機微を余すところなく記録します。あなたの「在り方」を深く伝える動画もセットに。
+        </div>
+        <a href="#contact" class="btn-primary">相談・予約する</a>
+      </div>
+
+      <!-- PERSONAL FLAG -->
+      <div class="menu-card">
+        <div class="menu-name">PERSONAL FLAG</div>
+        <div class="menu-price">¥360,000<span>(税込)</span></div>
+        <div class="menu-spec">年4日の撮影 ／ 写真最大50枚 ＋ プロフィール動画</div>
+        <div class="menu-desc">
+          四季を通じてあなたの変化や歩みに寄り添う年間契約プラン。節目節目で記録を残し、ブランドや個人のフラッグシップとなる作品を残します。
+        </div>
+        <a href="#contact" class="btn-secondary">相談・予約する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About / Biography -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag">Biography</div>
+      <h2 class="sec-title">About Photographer</h2>
+    </div>
+    <div class="about-box">
+      <div class="about-pic">
+        <img src="images/profile.jpg" alt="田中悠太 Yuta Tanaka">
+      </div>
+      <div class="about-info">
+        <h3>田中悠太 / Yuta Tanaka</h3>
+        <div class="sub">愛知県豊橋市を拠点に活動</div>
+        <p>
+          日常の生きる美しい瞬間や表情をおさめています。<br>
+          整えるだけ。ありのままを撮影します。撮影を終えた時、あなたの在り方が目に見えるカタチになります。
+        </p>
+        <p>
+          <strong>【Photograph Style】</strong><br>
+          Portrait, Video
+        </p>
+        <p>
+          愛知県豊橋市を拠点に、全国各地での出張撮影も承っています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section id="contact" class="cta-sec">
+  <div class="container">
+    <div class="sec-tag">Get in Touch</div>
+    <h2 class="sec-title">Contact</h2>
+    <p>
+      撮影のご依頼、日程や場所のご相談など、気になることがあればInstagramのDMでお気軽にお問い合わせください。
+    </p>
+    <a href="https://www.instagram.com/tayu__t" target="_blank" rel="noopener" class="btn-insta">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="#000"/></svg>
+      <span>Instagram @tayu__t にDMを送る</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>Copyright © 2026 Ema. / Yuta Tanaka All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/tayu__t" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </div>
 </footer>
 
+<!-- Lightbox Modal -->
+<div id="modal">
+  <img id="modal-img" src="" alt="Enlarged photo">
+</div>
+
 <script>
-/* ===== 写真の入れ方 =====
-   images/hero      … 入口のスライド（01.jpg, 02.jpg … 連番）
-   images/portrait  … ポートレートギャラリー（連番）
-   images/works     … Worksギャラリー（下記WORKS_IMAGESで指定、または連番）
-   images/profile.jpg … Biographyの正方形写真 */
-const WORKS_IMAGES = [
-  'images/works/011D3F7E-4372-445B-9237-7F0EA7FE9188_1_105_c.jpeg',
-  'images/works/14321BD0-713E-4C37-A931-E86991234377_4_5005_c.jpeg',
-  'images/works/1F58EA65-1283-4681-908A-F72B31A1BE6C_4_5005_c.jpeg',
-  'images/works/32B879C9-B7DF-4B8A-ABA8-0F799E7CB435_4_5005_c.jpeg',
-  'images/works/3808D591-B1A6-44E5-B3B6-52744D0E0CB4_4_5005_c.jpeg',
-  'images/works/3C370DB9-2FD1-4487-9933-D73F3BC1EB3A_4_5005_c.jpeg',
-  'images/works/4BBBE8B8-D046-4534-90F8-267A1657AEAD_4_5005_c.jpeg',
-  'images/works/7A8531BD-D08E-429B-A6C0-2CF2A4DDA5FC_1_105_c.jpeg'
-];
+// Lightbox
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+document.querySelectorAll('.gal-card').forEach(card => {
+  card.onclick = () => {
+    modalImg.src = card.dataset.src;
+    modal.classList.add('active');
+  };
+});
+modal.onclick = () => modal.classList.remove('active');
 
-const GAL = {
-  home: 'images/hero',
-  portrait: 'images/portrait',
-  works: WORKS_IMAGES
-};
-const pad = i => String(i).padStart(2,'0');
-const $ = s => document.querySelector(s);
-const stage = $('#stage'), cache = {};
-let key = 'home', idx = 0;
-
-const ok = s => new Promise(r => { const im = new Image(); im.onload = () => r(true); im.onerror = () => r(false); im.src = s; });
-function load(k){
-  if(cache[k]) return cache[k];
-  const L = cache[k] = {items:[], done:false};
-  (async () => {
-    const src = GAL[k];
-    if(Array.isArray(src)){
-      for(const s of src){
-        if(await ok(s)) L.items.push(s);
-        if(k===key && L.items.length===1) render();
-      }
-    } else {
-      for(let i=1;i<=99;i++){
-        const p1 = `${src}/${pad(i)}.jpg`;
-        const p2 = `${src}/${pad(i)}.jpeg`;
-        const s = (await ok(p1)) ? p1 : ((await ok(p2)) ? p2 : null);
-        if(!s) break;
-        L.items.push(s);
-        if(k===key && L.items.length===1) render();
-      }
-    }
-    L.done = true;
-    if(k===key && !L.items.length) render();
-  })();
-  return L;
-}
-function render(){
-  const L = cache[key]; stage.textContent = '';
-  if(L && L.items.length){ const im = document.createElement('img'); im.src = L.items[idx % L.items.length]; im.alt = ''; im.draggable = false; stage.append(im); }
-  else if(L && L.done){ const d = document.createElement('div'); d.className = 'ph'; d.textContent = Array.isArray(GAL[key]) ? 'images/works' : `${GAL[key]}/01.jpg`; stage.append(d); }
-}
-function step(d){ const n = (cache[key] && cache[key].items) ? cache[key].items.length : 0; if(n){ idx = (idx + d + n) % n; render(); } }
-stage.onclick = () => step(1);
-$('.arr.n').onclick = () => step(1);
-$('.arr.p').onclick = () => step(-1);
-addEventListener('keydown', e => { if($('#v-gal').hidden) return; if(e.key==='ArrowRight') step(1); if(e.key==='ArrowLeft') step(-1); });
-let x0 = null;
-stage.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive:true});
-stage.addEventListener('touchend', e => { if(x0===null) return; const dx = e.changedTouches[0].clientX - x0; if(Math.abs(dx)>40){ step(dx<0?1:-1); } x0 = null; });
-
-function route(){
-  const h = location.hash.slice(1) || 'home';
-  const page = (h==='about'||h==='contact') ? h : null;
-  $('#v-gal').hidden = !!page; $('#v-about').hidden = page!=='about'; $('#v-contact').hidden = page!=='contact';
-  if(!page){ key = GAL[h] ? h : 'home'; idx = 0; load(key); render(); }
-  const cur = page || key;
-  document.querySelectorAll('#nav [data-k]').forEach(a => a.classList.toggle('on', a.dataset.k===cur));
-  $('#bar').classList.remove('open'); $('.mb').setAttribute('aria-expanded','false');
-  scrollTo(0,0);
-}
-addEventListener('hashchange', route); route();
-
-/* メニュー（モバイル） */
-$('.mb').onclick = () => { const o = $('#bar').classList.toggle('open'); $('.mb').setAttribute('aria-expanded', o); };
-const ddBtn = $('.dd > button');
-if(ddBtn) ddBtn.onclick = () => $('.dd').classList.toggle('open');
-
-/* 画像保護（右クリック保存の抑止） */
-document.addEventListener('contextmenu', e => { if(e.target.tagName==='IMG') e.preventDefault(); });
-
-/* Share */
-$('#share').onclick = async () => {
-  const d = {title:document.title, url:location.href};
-  try{ if(navigator.share) await navigator.share(d); else { await navigator.clipboard.writeText(d.url); alert('リンクをコピーしました'); } }catch(_){}
-};
+// Image context menu prevent
+document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
+
 </body>
 </html>
