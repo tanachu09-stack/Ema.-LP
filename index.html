@@ -120,9 +120,7 @@ h2:not(:first-child){margin-top:64px}
   <button class="mb" aria-expanded="false">Menu</button>
   <nav id="nav" aria-label="メインメニュー">
     <a href="#portrait" data-k="portrait">Portrait</a>
-    <a href="#life" data-k="life">Life Work</a>
-    <div class="dd"><button type="button" data-k="proj" aria-haspopup="true">Projects</button>
-      <div class="sub"><a href="#so" data-k="so">SO – 賀茂神社</a><a href="#slime" data-k="slime">SLIME</a></div></div>
+    <a href="#works" data-k="works">Works</a>
     <a href="#about" data-k="about">Biography</a>
     <a href="#contact" data-k="contact">Contact</a>
     <a href="lp.html" class="lp-link" title="ランディングページ形式で閲覧">LP View</a>
@@ -137,10 +135,25 @@ h2:not(:first-child){margin-top:64px}
 <script>
 /* ===== 写真の入れ方 =====
    images/hero      … 入口のスライド（01.jpg, 02.jpg … 連番）
-   images/portrait / life / so / slime … 各ギャラリー（同じく連番）
-   images/profile.jpg … Biographyの正方形写真
-   連番が途切れたところまでを自動で読み込みます（拡張子は .jpg） */
-const GAL = {home:'images/hero', portrait:'images/portrait', life:'images/life', so:'images/so', slime:'images/slime'};
+   images/portrait  … ポートレートギャラリー（連番）
+   images/works     … Worksギャラリー（下記WORKS_IMAGESで指定、または連番）
+   images/profile.jpg … Biographyの正方形写真 */
+const WORKS_IMAGES = [
+  'images/works/011D3F7E-4372-445B-9237-7F0EA7FE9188_1_105_c.jpeg',
+  'images/works/14321BD0-713E-4C37-A931-E86991234377_4_5005_c.jpeg',
+  'images/works/1F58EA65-1283-4681-908A-F72B31A1BE6C_4_5005_c.jpeg',
+  'images/works/32B879C9-B7DF-4B8A-ABA8-0F799E7CB435_4_5005_c.jpeg',
+  'images/works/3808D591-B1A6-44E5-B3B6-52744D0E0CB4_4_5005_c.jpeg',
+  'images/works/3C370DB9-2FD1-4487-9933-D73F3BC1EB3A_4_5005_c.jpeg',
+  'images/works/4BBBE8B8-D046-4534-90F8-267A1657AEAD_4_5005_c.jpeg',
+  'images/works/7A8531BD-D08E-429B-A6C0-2CF2A4DDA5FC_1_105_c.jpeg'
+];
+
+const GAL = {
+  home: 'images/hero',
+  portrait: 'images/portrait',
+  works: WORKS_IMAGES
+};
 const pad = i => String(i).padStart(2,'0');
 const $ = s => document.querySelector(s);
 const stage = $('#stage'), cache = {};
@@ -151,15 +164,31 @@ function load(k){
   if(cache[k]) return cache[k];
   const L = cache[k] = {items:[], done:false};
   (async () => {
-    for(let i=1;i<=99;i++){ const s = `${GAL[k]}/${pad(i)}.jpg`; if(!await ok(s)) break; L.items.push(s); if(k===key && L.items.length===1) render(); }
-    L.done = true; if(k===key && !L.items.length) render();
+    const src = GAL[k];
+    if(Array.isArray(src)){
+      for(const s of src){
+        if(await ok(s)) L.items.push(s);
+        if(k===key && L.items.length===1) render();
+      }
+    } else {
+      for(let i=1;i<=99;i++){
+        const p1 = `${src}/${pad(i)}.jpg`;
+        const p2 = `${src}/${pad(i)}.jpeg`;
+        const s = (await ok(p1)) ? p1 : ((await ok(p2)) ? p2 : null);
+        if(!s) break;
+        L.items.push(s);
+        if(k===key && L.items.length===1) render();
+      }
+    }
+    L.done = true;
+    if(k===key && !L.items.length) render();
   })();
   return L;
 }
 function render(){
   const L = cache[key]; stage.textContent = '';
   if(L && L.items.length){ const im = document.createElement('img'); im.src = L.items[idx % L.items.length]; im.alt = ''; im.draggable = false; stage.append(im); }
-  else if(L && L.done){ const d = document.createElement('div'); d.className = 'ph'; d.textContent = `${GAL[key]}/01.jpg`; stage.append(d); }
+  else if(L && L.done){ const d = document.createElement('div'); d.className = 'ph'; d.textContent = Array.isArray(GAL[key]) ? 'images/works' : `${GAL[key]}/01.jpg`; stage.append(d); }
 }
 function step(d){ const n = (cache[key] && cache[key].items) ? cache[key].items.length : 0; if(n){ idx = (idx + d + n) % n; render(); } }
 stage.onclick = () => step(1);
@@ -176,15 +205,16 @@ function route(){
   $('#v-gal').hidden = !!page; $('#v-about').hidden = page!=='about'; $('#v-contact').hidden = page!=='contact';
   if(!page){ key = GAL[h] ? h : 'home'; idx = 0; load(key); render(); }
   const cur = page || key;
-  document.querySelectorAll('#nav [data-k]').forEach(a => a.classList.toggle('on', a.dataset.k===cur || (a.dataset.k==='proj' && (cur==='so'||cur==='slime'))));
+  document.querySelectorAll('#nav [data-k]').forEach(a => a.classList.toggle('on', a.dataset.k===cur));
   $('#bar').classList.remove('open'); $('.mb').setAttribute('aria-expanded','false');
   scrollTo(0,0);
 }
 addEventListener('hashchange', route); route();
 
-/* メニュー（モバイル）・Projects（タップ開閉） */
+/* メニュー（モバイル） */
 $('.mb').onclick = () => { const o = $('#bar').classList.toggle('open'); $('.mb').setAttribute('aria-expanded', o); };
-$('.dd > button').onclick = () => $('.dd').classList.toggle('open');
+const ddBtn = $('.dd > button');
+if(ddBtn) ddBtn.onclick = () => $('.dd').classList.toggle('open');
 
 /* 画像保護（右クリック保存の抑止） */
 document.addEventListener('contextmenu', e => { if(e.target.tagName==='IMG') e.preventDefault(); });
